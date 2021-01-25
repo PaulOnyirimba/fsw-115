@@ -13,3 +13,10 @@ axios.get("https://api.vschool.io/PaulOnyirimba/todo")
 
 .then(response => console.log(response))
     .catch(error => console.log(error))
+
+
+    const form = document.myForm
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault()
+})
