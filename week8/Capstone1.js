@@ -1,7 +1,4 @@
-// url: https://api.vschool.io/paulonyirimba/todo
-// get all
-
-axios.get("https://api.vschool.io/paulonyirimba/todo")
+axios.get("https://api.vschool.io/PaulOnyirimba/todo")
 .then(response => {
     for(let i = 0; i < response.data.length; i++){
         const h1 = document.createElement('h1')
@@ -19,4 +16,11 @@ axios.get("https://api.vschool.io/paulonyirimba/todo")
 
 form.addEventListener("submit", (event) => {
     event.preventDefault()
+    var todo = {
+        title: form.title.value
+    }
+    axios.post ('https://api.vschool.io/PaulOnyirimba/todo', todo)
+    .then(response => console.log(response.data))
+    .catch(error => console.log(error))
+
 })
